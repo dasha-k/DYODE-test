@@ -5,6 +5,18 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [`gatsby-plugin-sass`],
+	/* Your site config here */
+	plugins: [
+		`gatsby-plugin-sass`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		// highlight-start
+		{
+		  resolve: `gatsby-source-filesystem`,
+		  options: {
+			path: `${__dirname}/src/data/`,
+		  },
+		},
+		// highlight-end
+	],
 }

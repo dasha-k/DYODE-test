@@ -10,9 +10,9 @@ export default function Header() {
     <>
       	<AnnouncementBar />
       	<header className="header">
-			<div className="header-icon-menu">humburger</div>
+			<div className="header-icon-menu">hamburger</div>
 				<div className="header-inner">
-					<h1><a href="/"><img src={logo} alt="Store name" /></a></h1>
+					<h1 className="header-logo"><a href="/"><img src={logo} alt="Store name" /></a></h1>
 					<NavbarDesktop />
 				</div>
 			<div className="header-icon-cart">cart icon</div>

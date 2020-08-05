@@ -11,6 +11,7 @@
 .header {
     background-color: $color-primary;
     color: $color-white;
+    position: relative;
 }
 
 .header-inner {
@@ -19,8 +20,16 @@
     align-items: center;
 }
 
-.header-icon-menu {
+.header-logo {
+    margin: 0;
+    padding: 5px 0;
+}
 
+.header-icon-menu {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 
     @include media-query($medium-up) {
         display: none;
@@ -28,7 +37,10 @@
 }
 
 .header-icon-cart {
-
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 
     @include media-query($medium-up) {
         display: none;

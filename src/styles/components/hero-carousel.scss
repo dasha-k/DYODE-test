@@ -1,0 +1,45 @@
+.carousel-container {
+    position: relative;
+}
+
+.carousel-slide {
+    position: relative;
+}
+
+.carousel-capture {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.carousel-indicators {
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    justify-content: center;
+    width: 100%;
+
+    @include media-query($medium-up) {
+        bottom: 36px;
+    }
+}
+
+.indicator {
+    display: block;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background: rgba(216,216,216,.7);
+
+    @include media-query($medium-up) {
+        height: 26px;
+        width: 26px;
+        margin: 0 10px;
+    }
+    
+
+    &.indicator-active {
+        background: $color-white;
+    }
+} 
