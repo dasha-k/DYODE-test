@@ -1,6 +1,10 @@
 // Colors
+$color-primary: #10504F;
+$color-black: #000000;
+$color-white: #FFFFFF;
 
 // Typography
+$font-body-family: 'Lato Light', sans-serif;
 
 // Grid
 $grid-medium: 750px;
@@ -12,6 +16,6 @@ $medium-up: 'medium-up';
 
 
 $breakpoints: (
-    $medium-up '(min-width: #{$grid-medium})'
+    $medium-up '(min-width: #{$grid-medium})',
 );
 

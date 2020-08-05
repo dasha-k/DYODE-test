@@ -1,0 +1,51 @@
+.announcement-bar {
+    background-color: $color-black;
+    color: $color-white;
+    text-align: center;
+    padding: 3px 0;
+
+    @include media-query($medium-up) {
+        padding: 10px 0 8px; // check with designer
+    }
+}
+.header {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-icon-menu {
+
+
+    @include media-query($medium-up) {
+        display: none;
+    }
+}
+
+.header-icon-cart {
+
+
+    @include media-query($medium-up) {
+        display: none;
+    }
+}
+
+// navbar desktop
+.menu-desktop {
+    display: none;
+
+    @include media-query($medium-up) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.menu-item {
+    margin-left: 35px;
+}
+
