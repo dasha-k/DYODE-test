@@ -1,0 +1,17 @@
+// Colors
+
+// Typography
+
+// Grid
+$grid-medium: 750px;
+$grid-max-width: 1440px;
+$grid-gutter: 30px;
+
+// Breakpoints used with the media-query mixin
+$medium-up: 'medium-up';
+
+
+$breakpoints: (
+    $medium-up '(min-width: #{$grid-medium})'
+);
+
