@@ -1,5 +1,7 @@
 .slider-container {
-
+    @include media-query($medium-up) {
+        margin-bottom: 50px;
+    }
 }
 
 .slider-header {
@@ -15,12 +17,25 @@
 
 .slider-track {
     display: grid;
-    grid-template-columns: repeat(4, calc(50% - 20px)) calc(50% - 20px);
-    grid-column-gap: 20px;
 
-    @include media-query($medium-up) {
-        grid-template-columns: repeat(4, calc(25% - 20px)) calc(25% - 20px);
+    &.track--4-2 {
+        grid-template-columns: repeat(4, calc(50% - 20px)) calc(50% - 20px);
         grid-column-gap: 20px;
+
+        @include media-query($medium-up) {
+            grid-template-columns: repeat(4, calc(25% - 20px)) calc(25% - 20px);
+            grid-column-gap: 20px;
+        }
+    }
+
+    &.track--5-3 {
+        grid-template-columns: repeat(4, calc(33.33333% - 20px)) calc(33.33333% - 20px);
+        grid-column-gap: 20px;
+
+        @include media-query($medium-up) {
+            grid-template-columns: repeat(4, calc(20% - 20px)) calc(20% - 20px);
+            grid-column-gap: 20px;
+        }
     }
                 
 }

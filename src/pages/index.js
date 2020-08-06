@@ -5,6 +5,7 @@ import HeroCarousel from "../components/heroCarousel";
 import FeatureRow from "../components/featureRow";
 import HeroBanner from "../components/heroBanner";
 import FeatureSlider from "../components/featureSlider";
+import InstagramFeed from "../components/instragramFeed";
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 			<FeatureRow />
 			<FeatureSlider />
 			<HeroBanner />
+			<InstagramFeed />
 		</Layout>
 	); 
 }

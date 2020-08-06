@@ -1,9 +1,7 @@
 button {
     display: block;
-    vertical-align: middle;
     width: auto;
     border: 0;
-    text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
@@ -21,9 +19,11 @@ button {
 .button-black {
     background-color: $color-black;
     color: $color-white;
+    text-transform: uppercase;
 }
 
 .button-primary {
     background-color: $color-primary;
     color: $color-white;
+    text-transform: uppercase;
 }
