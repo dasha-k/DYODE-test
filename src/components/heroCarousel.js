@@ -12,14 +12,13 @@ function CarouselSlide() {
         query {
         carouselSlideDesktop: file(relativePath: { eq: "carousel-hero-1.jpg" }) {
             childImageSharp {
-            fluid(maxWidth: 700) {
+            fluid(maxWidth: 1700) {
                 ...GatsbyImageSharpFluid
             }
             }
         }
         }
     `)
-    console.log(data);
     return (
         <div className="carousel-slide">
             <Img
