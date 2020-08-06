@@ -9,10 +9,10 @@ function FeatureItem({item, image}) {
 
     return (
         <div className="feature-item">
-            <a className="feature-item-inner" href="#">
+            <a className="feature-item-inner" href="#" aria-label={`Link to ${item}`}>
                 <Img
                     fluid={image.childImageSharp.fluid}
-                    alt={item}
+                    alt={`Link to ${item}`}
                 />
                 <div className="feature-item-title">
                     <span>{item}</span>

@@ -1,0 +1,29 @@
+button {
+    display: block;
+    vertical-align: middle;
+    width: auto;
+    border: 0;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    user-select: none;
+    appearance: none;
+    font-weight: 400;
+    padding: 12px 20px;
+    margin: 20px 0;
+}
+
+.button {
+    @extend button;
+}
+
+.button-black {
+    background-color: $color-black;
+    color: $color-white;
+}
+
+.button-primary {
+    background-color: $color-primary;
+    color: $color-white;
+}

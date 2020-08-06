@@ -11,6 +11,7 @@ export default function Home() {
 		<Layout>
 			<HeroCarousel />
 			<FeatureRow />
+			<FeatureSlider />
 			<HeroBanner />
 		</Layout>
 	); 

@@ -1,0 +1,30 @@
+.slider-container {
+
+}
+
+.slider-header {
+    text-align: center;
+    padding: 21px;
+}
+
+.slider {
+    overflow-x: auto;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.slider-track {
+    display: grid;
+    grid-template-columns: repeat(4, calc(50% - 20px)) calc(50% - 20px);
+    grid-column-gap: 20px;
+
+    @include media-query($medium-up) {
+        grid-template-columns: repeat(4, calc(25% - 20px)) calc(25% - 20px);
+        grid-column-gap: 20px;
+    }
+                
+}
+
+.slide {
+    
+}
