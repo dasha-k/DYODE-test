@@ -18,7 +18,7 @@ export default function FooterLinks() {
                     const currentColumn = "col"+ index;
                     return (
                         <div key={index} className="footer-links-col">
-                            <h3>{el}</h3>
+                            <h3 className="h4">{el}</h3>
                             <ul>
                                 {columns[currentColumn].map(el => <li key={el}><a href="#" className="footer-links-link">{el}</a></li>)}
                             </ul>
@@ -27,7 +27,7 @@ export default function FooterLinks() {
                 })
             }
             <div className="footer-links-col-wide">
-                <h3>Follow Us</h3>
+                <h3 className="h4">Follow Us</h3>
                 <div>
                     <a href="#" target="_blank" className="social-link"><img src={facebook} alt="Follow us on ..." /></a>
                     <a href="#" target="_blank" className="social-link"><img src={insta} alt="Follow us on ..." /></a>

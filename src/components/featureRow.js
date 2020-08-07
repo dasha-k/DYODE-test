@@ -11,11 +11,11 @@ function FeatureItem({item, image}) {
         <div className="feature-item">
             <a className="feature-item-inner" href="#" aria-label={`Link to ${item}`}>
                 <Img
-                    fluid={image.childImageSharp.fluid}
+                    fluid={image}
                     alt={`Link to ${item}`}
                 />
                 <div className="feature-item-title">
-                    <span>{item}</span>
+                    <span className="h2">{item}</span>
                 </div>
             </a>
         </div>
@@ -25,6 +25,20 @@ function FeatureItem({item, image}) {
 export default function FeatureRow() {
     const data = useStaticQuery(graphql`
         query {
+            accessoriesMobile: file(relativePath: { eq: "accessories-mobile.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            accessories: file(relativePath: { eq: "accessories.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             womens: file(relativePath: { eq: "womens.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 600) {
@@ -40,31 +54,26 @@ export default function FeatureRow() {
                     }
                 }
             }
-
-            accessories: file(relativePath: { eq: "accessories.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            accessoriesMobile: file(relativePath: { eq: "accessories-mobile.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
         }
     `)
+
+    console.log(data);
 
     return (
         <div className="feature-row-container">
             {items.map(el => {
                 const image = el.toLowerCase();
+                const sources = el === "Accessories" 
+                ? [
+                    data.accessoriesMobile.childImageSharp.fluid,
+                    {
+                        ...data.accessories.childImageSharp.fluid,
+                        media: `(min-width: 750px)`,
+                    },
+                ]
+                : data[image].childImageSharp.fluid;
                 return (
-                    <FeatureItem key={el} item={el} image={data[image]}/>
+                    <FeatureItem key={el} item={el} image={sources}/>
                 )
             })}
         </div>

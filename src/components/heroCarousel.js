@@ -10,24 +10,40 @@ const slideSubtitle = "Tagline will go right here";
 function CarouselSlide() {
     const data = useStaticQuery(graphql`
         query {
-        carouselSlideDesktop: file(relativePath: { eq: "carousel-hero-1.jpg" }) {
-            childImageSharp {
-            fluid(maxWidth: 1700) {
-                ...GatsbyImageSharpFluid
+            carouselSlideMobile: file(relativePath: { eq: "carousel-hero-mobile-1.jpg" }) {
+                childImageSharp {
+                fluid(maxWidth: 750, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+                }
             }
+            carouselSlideDesktop: file(relativePath: { eq: "carousel-hero-1.jpg" }) {
+                childImageSharp {
+                fluid(maxWidth: 2000, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+                }
             }
-        }
         }
     `)
+
+    const sources = [
+        data.carouselSlideMobile.childImageSharp.fluid,
+        {
+            ...data.carouselSlideDesktop.childImageSharp.fluid,
+            media: `(min-width: 750px)`,
+        },
+    ]
+
     return (
         <div className="carousel-slide">
             <Img
-                fluid={data.carouselSlideDesktop.childImageSharp.fluid}
+                fluid={sources}
                 alt="New collection"
             />
             <div className="carousel-capture">
                 <h2>{slideTitle}</h2>
-                <span>{slideSubtitle}</span>
+                <span className="subtitle">{slideSubtitle}</span>
                 <Button color="black" link="/" label="Shop now" />
             </div>
         </div>

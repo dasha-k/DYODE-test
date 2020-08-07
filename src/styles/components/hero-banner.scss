@@ -5,6 +5,11 @@
 .hero-capture {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 20px;
     transform: translateY(-50%);
+    color: $color-white;
+
+    @include media-query($medium-up) {
+        right: 75px;
+    }
 }

@@ -9,8 +9,13 @@
 .carousel-capture {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 20px;
     transform: translateY(-50%);
+    color: $color-white;
+
+    @include media-query($medium-up) {
+        left: 75px;
+    }
 }
 
 .carousel-indicators {

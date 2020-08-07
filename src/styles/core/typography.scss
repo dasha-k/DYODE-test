@@ -23,3 +23,72 @@ a {
     text-decoration: none;
     font-family: $font-body-family;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-special;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+h2 {
+	font-size: 26px;
+	@include media-query($medium-up) {
+		font-size: 54px;
+	}
+	
+}
+
+.h2 {
+	@extend h2;
+	display: block;
+}
+
+h3, .h3 {
+	font-size: 26px;
+	@include media-query($medium-up) {
+		font-size: 32px;
+	}
+}
+
+h4, .h4 {
+	font-size: 22px;
+}
+
+// Special titles
+span {
+	&.subtitle {
+		display: block;
+		font-size: 18px;
+
+		@include media-query($medium-up) {
+			font-size: 32px;
+		}
+
+	}
+
+	&.caption-title {
+		display: block;
+		font-weight: bold;
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+
+	&.caption-subtitle {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	&.caption-special {
+		display: block;
+		font-family: $font-special;
+		color: $color-primary;
+		margin-bottom: 5px;
+		font-size: 24px;
+	}
+}

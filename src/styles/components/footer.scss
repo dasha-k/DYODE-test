@@ -26,10 +26,24 @@
 .newsletter-capture,
 .newsletter-form-wrapper {
     flex: 1 1 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
 
     @include media-query($medium-up) {
         flex: 1 1 50%;
     }
+}
+
+.newsletter-capture {
+    text-align: center;
+
+    @include media-query($medium-up) {
+        text-align: left;
+    }
+}
+
+.newsletter-form-wrapper {
+    align-self: center;
 }
 
 .newsletter-form {
@@ -41,6 +55,7 @@
     border: none;
     margin-right: 5px;
     flex: 1 1 auto;
+    padding-left: 15px;
 }
 
 .newsletter-button {
@@ -49,6 +64,7 @@
     border: 3px solid $color-white;
     color: $color-white;
     font-family: $font-special;
+    padding: 5px 20px;
 }
 
 .footer-links-container {

@@ -1,11 +1,21 @@
 .feature-row-container {
     display: flex;
-    padding: 20px;
+    flex-wrap: wrap;
+    padding: 7px;
+
+    @include media-query($medium-up) {
+        padding: 20px;
+    }
 }
 .feature-item {
-    flex: 0 1 33.33333%;
-    padding: 20px;
+    flex: 1 0 50%;
+    padding: 7px;
     box-sizing: border-box;
+
+    @include media-query($medium-up) {
+        flex: 0 1 33.33333%;
+        padding: 20px;
+    }
 }
 
 .feature-item-inner {
@@ -21,5 +31,4 @@
     background-color: $color-primary;
     color: $color-white;
     text-align: center;
-    padding: 5px 0 12px;
 }

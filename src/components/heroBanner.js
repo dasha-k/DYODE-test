@@ -10,24 +10,40 @@ const slideSubtitle = "Tagline will go right here";
 export default function HeroBanner() {
     const data = useStaticQuery(graphql`
         query {
-        heroDesktop: file(relativePath: { eq: "banner-hero-1.jpg" }) {
-            childImageSharp {
-            fluid(maxWidth: 1700) {
-                ...GatsbyImageSharpFluid
+            heroMobile: file(relativePath: { eq: "banner-hero-mobile-1.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 750, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
             }
+            heroDesktop: file(relativePath: { eq: "banner-hero-1.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2000, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
             }
-        }
         }
     `)
+
+    const sources = [
+        data.heroMobile.childImageSharp.fluid,
+        {
+            ...data.heroDesktop.childImageSharp.fluid,
+            media: `(min-width: 750px)`,
+        },
+    ]
+
     return (
         <div className="hero-container">
             <Img
-                fluid={data.heroDesktop.childImageSharp.fluid}
+                fluid={sources}
                 alt="New collection"
             />
             <div className="hero-capture">
                 <h2>{slideTitle}</h2>
-                <span>{slideSubtitle}</span>
+                <span className="subtitle">{slideSubtitle}</span>
                 <Button color="primary" link="/" label="Shop now" />
             </div>
         </div>
